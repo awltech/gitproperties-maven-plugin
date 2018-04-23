@@ -55,6 +55,8 @@ There, the plugin will bind to the "initialize" maven phase, to inject the infor
 
 Here, git-modified will tell you if the built project has delta with remote. Here, the code was modified once. This can help you know if the code built differs from your origin.
 
+Also, as Maven proposes the build-timestamp in the build, but only in the UTC timezone, the plugin injects it with the same date formatter as the one for the git-update. But if you don't like formatted time at all, you can add the ```<useTimestamps>true</useTimestamps>``` configuration item, to get the UNIX timestamps instead of dates.
+
 
 ## Injecting the git commit SHA into the jar's manifest
 
